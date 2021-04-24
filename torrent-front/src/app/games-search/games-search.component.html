@@ -1,0 +1,10 @@
+<div id="search-component">
+    <h4>Games Search</h4>
+    <input #search id="search-box" ng-Model="search(searchBox.value)"/>
+
+    <ul class="search-result">
+        <li *ngFor="let game in games;">
+            <a routerLink="/games/{{game.id}}">{{game.title}}</a>
+        </li>
+    </ul>
+</div>

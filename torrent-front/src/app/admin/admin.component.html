@@ -1,0 +1,25 @@
+<div class="title">Adding new game</div>
+<div class="admin">
+    <input type="text" placeholder="Name" name="name" [(ngModel)]="game.title">
+    <input type="text" placeholder="Category" name="category" [(ngModel)]="game.category">
+    <input type="text" placeholder="Description" name="description" [(ngModel)]="game.description">
+    <input type="text" placeholder="image" name="image" [(ngModel)]="game.image">
+
+    <div *ngIf="!editable">
+        <button>Create</button>
+    </div>
+    <div *ngIf="editable">
+        <button>Edit</button>
+    </div>
+
+    <hr/>
+    <div class="list">
+        <div *ngFor="let g of games">
+            <div class="list_item">
+                <div class="list_item__title">{{g.title}}</div>
+                <div class="list_item__edit">Edit</div>
+                <div class="list_item__delete">Delete</div>
+            </div>
+        </div>
+    </div>
+</div>
